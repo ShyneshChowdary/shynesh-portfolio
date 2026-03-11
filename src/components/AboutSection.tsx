@@ -24,7 +24,7 @@ const AboutSection = () => {
               I'm a QA Developer currently working at <span className="text-primary font-medium">RSA Tech</span>, where I focus on delivering high-quality, bug-free software. I enjoy the challenge of finding edge cases and ensuring every product meets the highest standards.
             </p>
             <p>
-              Based in Vijayawada, India, I'm passionate about software quality assurance, test automation, and building reliable digital products that users can trust.
+              Originally from Vijayawada and currently based in Hyderabad, India, I'm passionate about software quality assurance, test automation, and building reliable digital products that users can trust.
             </p>
           </div>
         </motion.div>
