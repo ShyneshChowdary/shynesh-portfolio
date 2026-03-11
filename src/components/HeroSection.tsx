@@ -33,7 +33,7 @@ const HeroSection = () => (
         transition={{ delay: 0.4 }}
         className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-10"
       >
-        QA Developer from Vijayawada, India. Passionate about ensuring software quality and delivering seamless digital experiences.
+        QA Developer from Vijayawada, currently working in Hyderabad, India. Passionate about ensuring software quality and delivering seamless digital experiences.
       </motion.p>
       <motion.a
         initial={{ opacity: 0, y: 20 }}
