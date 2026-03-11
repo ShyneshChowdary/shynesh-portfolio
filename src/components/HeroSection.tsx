@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => (
-  <section className="min-h-screen flex items-center section-padding pt-32">
-    <div className="max-w-6xl mx-auto w-full">
+  <section
+    className="min-h-screen flex items-center section-padding pt-32 relative bg-cover bg-center"
+    style={{ backgroundImage: `url(${heroBg})` }}
+  >
+    <div className="absolute inset-0 bg-background/75" />
+    <div className="max-w-6xl mx-auto w-full relative z-10">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

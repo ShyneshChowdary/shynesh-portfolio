@@ -22,7 +22,7 @@ const ProjectsSection = () => {
 
           <div className="group relative bg-card border border-border rounded-lg p-8 hover:border-primary/40 transition-colors duration-300 glow">
             <div className="flex items-start justify-between mb-4">
-              <p className="font-mono text-primary text-sm">Featured Project</p>
+              <p className="font-mono text-primary text-sm">Final Year Project</p>
               <ExternalLink size={18} className="text-muted-foreground" />
             </div>
             <h3 className="text-xl font-bold mb-3">Animal Detection</h3>
