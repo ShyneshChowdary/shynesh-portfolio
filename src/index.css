@@ -15,7 +15,7 @@
     --popover: 220 18% 10%;
     --popover-foreground: 210 20% 92%;
 
-    --primary: 160 84% 50%;
+    --primary: 45 100% 55%;
     --primary-foreground: 220 20% 7%;
 
     --secondary: 220 16% 14%;
@@ -24,7 +24,7 @@
     --muted: 220 14% 16%;
     --muted-foreground: 215 12% 55%;
 
-    --accent: 160 84% 50%;
+    --accent: 45 100% 55%;
     --accent-foreground: 220 20% 7%;
 
     --destructive: 0 84% 60%;
@@ -32,7 +32,7 @@
 
     --border: 220 14% 18%;
     --input: 220 14% 18%;
-    --ring: 160 84% 50%;
+    --ring: 45 100% 55%;
 
     --radius: 0.5rem;
 
@@ -41,12 +41,12 @@
 
     --sidebar-background: 220 18% 10%;
     --sidebar-foreground: 210 20% 92%;
-    --sidebar-primary: 160 84% 50%;
+    --sidebar-primary: 45 100% 55%;
     --sidebar-primary-foreground: 220 20% 7%;
     --sidebar-accent: 220 14% 16%;
     --sidebar-accent-foreground: 210 20% 92%;
     --sidebar-border: 220 14% 18%;
-    --sidebar-ring: 160 84% 50%;
+    --sidebar-ring: 45 100% 55%;
   }
 }
 
@@ -74,11 +74,11 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-300;
   }
 
   .glow {
-    box-shadow: 0 0 40px -10px hsl(160 84% 50% / 0.3);
+    box-shadow: 0 0 40px -10px hsl(45 100% 55% / 0.3);
   }
 
   .section-padding {
