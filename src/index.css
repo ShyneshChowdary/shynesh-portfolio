@@ -78,7 +78,7 @@
   }
 
   .glow {
-    box-shadow: 0 0 40px -10px hsl(160 84% 50% / 0.3);
+    box-shadow: 0 0 40px -10px hsl(45 100% 55% / 0.3);
   }
 
   .section-padding {
