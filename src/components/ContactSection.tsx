@@ -32,24 +32,24 @@ const ContactSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://mail.google.com/mail/?view=cm&to=raparlashynesh64@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => handleOpenExternal(gmailComposeUrl, `mailto:${email}`)}
               className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-colors duration-200"
+              aria-label="Send email to Shynesh Raparla"
             >
               <Mail size={16} />
               Email Me
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shyneshraparla/"
-              target="_blank"
-              rel="noopener noreferrer"
+            </button>
+            <button
+              type="button"
+              onClick={() => handleOpenExternal(linkedInUrl)}
               className="inline-flex items-center gap-2 font-mono text-sm border border-border text-foreground px-8 py-4 rounded hover:border-primary hover:text-primary transition-colors duration-200"
+              aria-label="Open LinkedIn profile of Shynesh Chowdary"
             >
               <Linkedin size={16} />
               LinkedIn
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>
