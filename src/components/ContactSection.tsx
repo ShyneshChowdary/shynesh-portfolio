@@ -22,7 +22,9 @@ const ContactSection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:raparlashynesh64@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&to=raparlashynesh64@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-colors duration-200"
             >
               <Mail size={16} />
