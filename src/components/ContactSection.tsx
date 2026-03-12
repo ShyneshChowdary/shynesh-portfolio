@@ -5,6 +5,17 @@ import { Mail, Linkedin } from "lucide-react";
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const email = "raparlashynesh64@gmail.com";
+  const gmailComposeUrl = `https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=${encodeURIComponent(email)}`;
+  const linkedInUrl = "https://www.linkedin.com/in/shyneshraparla/";
+
+  const handleOpenExternal = (url: string, fallbackUrl?: string) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+    if (!newWindow && fallbackUrl) {
+      window.location.href = fallbackUrl;
+    }
+  };
 
   return (
     <section id="contact" className="section-padding" ref={ref}>
