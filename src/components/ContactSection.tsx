@@ -6,16 +6,8 @@ const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const email = "raparlashynesh64@gmail.com";
-  const gmailComposeUrl = `https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=${encodeURIComponent(email)}`;
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
   const linkedInUrl = "https://www.linkedin.com/in/shyneshraparla/";
-
-  const handleOpenExternal = (url: string, fallbackUrl?: string) => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-
-    if (!newWindow && fallbackUrl) {
-      window.location.href = fallbackUrl;
-    }
-  };
 
   return (
     <section id="contact" className="section-padding" ref={ref}>
@@ -32,24 +24,26 @@ const ContactSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={() => handleOpenExternal(gmailComposeUrl, `mailto:${email}`)}
+            <a
+              href={gmailComposeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-colors duration-200"
               aria-label="Send email to Shynesh Raparla"
             >
               <Mail size={16} />
               Email Me
-            </button>
-            <button
-              type="button"
-              onClick={() => handleOpenExternal(linkedInUrl)}
+            </a>
+            <a
+              href={linkedInUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-mono text-sm border border-border text-foreground px-8 py-4 rounded hover:border-primary hover:text-primary transition-colors duration-200"
               aria-label="Open LinkedIn profile of Shynesh Chowdary"
             >
               <Linkedin size={16} />
               LinkedIn
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
