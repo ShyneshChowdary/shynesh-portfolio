@@ -1,13 +1,24 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Check, Copy } from "lucide-react";
+import { useState } from "react";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const email = "raparlashynesh64@gmail.com";
-  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
   const linkedInUrl = "https://www.linkedin.com/in/shyneshraparla/";
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.prompt("Copy this email address:", email);
+    }
+  };
 
   return (
     <section id="contact" className="section-padding" ref={ref}>
@@ -24,16 +35,14 @@ const ContactSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={gmailComposeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleCopyEmail}
               className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-colors duration-200"
-              aria-label="Send email to Shynesh Raparla"
+              aria-label="Copy email address"
             >
-              <Mail size={16} />
-              Email Me
-            </a>
+              {copied ? <Check size={16} /> : <Copy size={16} />}
+              {copied ? "Copied!" : "Copy Email"}
+            </button>
             <a
               href={linkedInUrl}
               target="_blank"
