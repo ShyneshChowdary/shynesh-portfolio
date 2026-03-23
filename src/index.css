@@ -64,6 +64,20 @@
     scroll-padding-top: 5rem;
     -webkit-overflow-scrolling: touch;
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+  * {
+    scrollbar-width: thin;
+  }
 }
 
 @layer utilities {
