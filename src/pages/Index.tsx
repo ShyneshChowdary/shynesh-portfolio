@@ -14,7 +14,7 @@ const Index = () => (
       className="relative bg-cover bg-center bg-fixed"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="absolute inset-0 bg-background/85 pointer-events-none" />
+      <div className="absolute inset-0 bg-background/85 dark:bg-background/85 bg-background/70 pointer-events-none" />
       <div className="relative z-10">
         <HeroSection />
         <AboutSection />
