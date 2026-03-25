@@ -51,7 +51,7 @@
 
   .light {
     --background: 40 20% 96%;
-    --foreground: 220 20% 12%;
+    --foreground: 220 25% 8%;
 
     --card: 40 15% 100%;
     --card-foreground: 220 18% 15%;
@@ -66,7 +66,7 @@
     --secondary-foreground: 220 16% 25%;
 
     --muted: 220 10% 92%;
-    --muted-foreground: 215 12% 40%;
+    --muted-foreground: 215 15% 28%;
 
     --accent: 35 100% 38%;
     --accent-foreground: 0 0% 100%;
