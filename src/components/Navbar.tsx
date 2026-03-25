@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "About", href: "#about" },
