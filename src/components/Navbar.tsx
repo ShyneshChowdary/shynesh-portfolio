@@ -33,9 +33,14 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
 
         {/* Mobile toggle */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
         <button
           className="md:hidden text-foreground"
           onClick={() => setOpen(!open)}
