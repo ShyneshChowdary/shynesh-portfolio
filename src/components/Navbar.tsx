@@ -73,7 +73,10 @@ const Navbar = () => {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMobileNav(l.href);
+                    }}
                     className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                   >
                     {l.label}
