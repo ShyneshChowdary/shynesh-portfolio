@@ -24,7 +24,7 @@ const ResumeSection = () => {
           <a
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-colors duration-200"
+            className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-all duration-200 spark-btn"
           >
             <Download size={16} />
             Download Resume
