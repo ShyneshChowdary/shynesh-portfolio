@@ -37,7 +37,7 @@ const ContactSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-all duration-200 spark-btn"
+              className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded transition-all duration-300 border-glow"
               aria-label="Copy email address"
             >
               {copied ? <Check size={16} /> : <Copy size={16} />}
@@ -47,7 +47,7 @@ const ContactSection = () => {
               href={linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-sm border border-border text-foreground px-8 py-4 rounded hover:border-primary hover:text-primary transition-all duration-200 spark-btn"
+              className="inline-flex items-center gap-2 font-mono text-sm border border-border text-foreground px-8 py-4 rounded hover:border-primary hover:text-primary transition-all duration-300 border-glow"
               aria-label="Open LinkedIn profile of Shynesh Chowdary"
             >
               <Linkedin size={16} />

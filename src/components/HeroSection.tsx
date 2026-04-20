@@ -40,7 +40,7 @@ const HeroSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
         href="#contact"
-        className="inline-block font-mono text-sm border border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-all duration-200 spark-btn"
+        className="inline-block font-mono text-sm border border-primary text-primary px-8 py-4 rounded transition-all duration-300 border-glow"
       >
         Get In Touch
       </motion.a>
