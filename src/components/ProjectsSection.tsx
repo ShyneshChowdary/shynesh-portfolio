@@ -22,7 +22,7 @@ const ProjectsSection = () => {
 
           <div className="space-y-8">
             <a
-              href="https://app.leorix.com"
+              href="https://wysera.ai/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative block bg-card border border-border rounded-lg p-8 hover:border-primary/40 transition-colors duration-300 glow"
@@ -31,15 +31,15 @@ const ProjectsSection = () => {
                 <p className="font-mono text-primary text-sm">Current Project</p>
                 <ExternalLink size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
-              <h3 className="text-xl font-bold mb-3">LeoRix</h3>
+              <h3 className="text-xl font-bold mb-3">Wysera</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                An all-in-one AI enterprise hub that unifies workflows, tools, and data into a single intelligent system. Build, automate, and connect business processes like CRM, lead generation, and contracts using AI-driven workflows — eliminating tool fragmentation and data silos.
+                An AI-agentic platform that replaces an entire stack of marketing, sales, and operations tools — HubSpot, Salesforce, Mailchimp, Zapier, and more — with one lower-cost system. A single AI assistant runs CRM, prospecting, email, SEO, automation, and scheduling end-to-end, with the human approving every action.
               </p>
               <ul className="flex flex-wrap gap-3 font-mono text-xs text-muted-foreground">
-                <li>AI Automation</li>
-                <li>Enterprise Platform</li>
-                <li>Workflow Integration</li>
-                <li>CRM</li>
+                <li>AI Agents</li>
+                <li>CRM &amp; Marketing</li>
+                <li>Sales Automation</li>
+                <li>SaaS Platform</li>
               </ul>
             </a>
 
