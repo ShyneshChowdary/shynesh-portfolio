@@ -21,7 +21,7 @@ const AboutSection = () => {
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I'm a QA Developer currently working at <span className="text-primary font-medium">RSA Tech</span>, where I focus on delivering high-quality, bug-free software. I enjoy the challenge of finding edge cases and ensuring every product meets the highest standards.
+              I'm a QA lead currently working at <span className="text-primary font-medium">WYSERA</span>, where I focus on delivering high-quality, bug-free software. I enjoy the challenge of finding edge cases and ensuring every product meets the highest standards.
             </p>
             <p>
               Originally from Vijayawada and currently based in Hyderabad, India, I'm passionate about software quality assurance, test automation, and building reliable digital products that users can trust.
