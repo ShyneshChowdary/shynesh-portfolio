@@ -1,60 +1,61 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Mail, Linkedin, Check, Copy } from "lucide-react";
-import { portfolioData } from "@/config/portfolio";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Check, Copy, Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { profile } from "@/data/profile";
 
 const ContactSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  const { contact } = portfolioData;
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(contact.email);
+      await navigator.clipboard.writeText(profile.contact.email);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      window.setTimeout(() => setCopied(false), profile.contact.copySuccessDurationMs);
     } catch {
-      window.prompt("Copy this email address:", contact.email);
+      window.prompt(profile.contact.copyPrompt, profile.contact.email);
     }
   };
 
   return (
-    <section id="contact" className="section-padding" ref={ref}>
-      <div className="max-w-xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="font-mono text-primary text-sm mb-2">{contact.sectionTitle}</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{contact.title}</h2>
-          <p className="text-muted-foreground mb-10 leading-relaxed">
-            {contact.description}
-          </p>
+    <section id="contact" className="section-padding scroll-mt-20">
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl mx-auto text-center"
+      >
+        <p className="font-mono text-primary text-sm mb-2">{profile.sections.contact.number} {profile.sections.contact.eyebrow}</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{profile.sections.contact.title}</h2>
+        <p className="text-muted-foreground mb-8 leading-relaxed">{profile.contact.description}</p>
+        <p className="font-mono text-sm text-muted-foreground mb-8">{profile.contact.emailLabel}</p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded transition-all duration-300 hover:bg-primary/10"
-              aria-label="Copy email address"
-            >
-              {copied ? <Check size={16} /> : <Copy size={16} />}
-              {copied ? "Copied!" : "Copy Email"}
-            </button>
-            <a
-              href={contact.linkedInUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-sm border border-border text-foreground px-8 py-4 rounded hover:border-primary hover:text-primary transition-all duration-300 hover:bg-primary/10"
-              aria-label="Open LinkedIn profile"
-            >
-              <Linkedin size={16} />
-              LinkedIn
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Button variant="outline" onClick={handleCopyEmail} aria-label={profile.contact.copyAriaLabel} className="border-primary text-primary hover:bg-primary/10">
+            {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+            {copied ? profile.contact.copiedLabel : profile.contact.copyLabel}
+          </Button>
+          <Button variant="outline" asChild className="border-primary text-primary hover:bg-primary/10">
+            <a href={profile.contact.mailto}>
+              <Mail aria-hidden="true" />
+              {profile.contact.mailtoLabel}
             </a>
-          </div>
-        </motion.div>
-      </div>
+          </Button>
+          <Button variant="outline" asChild>
+            <a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label={profile.contact.linkedinAriaLabel}>
+              <Linkedin aria-hidden="true" />
+              {profile.contact.linkedinLabel}
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a href={profile.contact.github} target="_blank" rel="noopener noreferrer" aria-label={profile.contact.githubAriaLabel}>
+              <Github aria-hidden="true" />
+              {profile.contact.githubLabel}
+            </a>
+          </Button>
+        </div>
+      </motion.div>
     </section>
   );
 };

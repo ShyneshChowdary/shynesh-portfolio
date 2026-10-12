@@ -1,7 +1,9 @@
+import { profile } from "@/data/profile";
+
 const Footer = () => (
   <footer className="py-8 text-center border-t border-border">
     <p className="font-mono text-xs text-muted-foreground">
-      © 2026 Shynesh Raparla. All rights reserved.
+      {profile.footer.copyrightPrefix} {new Date().getFullYear()} {profile.name}. {profile.footer.copyrightSuffix}
     </p>
   </footer>
 );

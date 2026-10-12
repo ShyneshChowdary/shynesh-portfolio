@@ -7,9 +7,11 @@ export const profile = {
   tagline: "I build quality software.",
   hero: {
     intro: "Hi, my name is",
+    title: "Software Developer | QA Automation & Social Media",
     description:
       "Software developer from Vijayawada, India. QA automation engineer turned social media manager at Wysera. Passionate about software quality and seamless digital experiences.",
     contactLabel: "Get In Touch",
+    contactHref: "#contact",
   },
   navigation: {
     logoAlt: "Shynesh Raparla",
@@ -128,6 +130,7 @@ export const profile = {
   },
   footer: {
     copyrightPrefix: "©",
+    copyrightSuffix: "All rights reserved.",
   },
   seo: {
     title: "Shynesh Raparla — Software Developer | QA Automation & Social Media",
