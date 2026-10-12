@@ -1,22 +1,21 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Mail, Linkedin, Check, Copy } from "lucide-react";
-import { useState } from "react";
+import { portfolioData } from "@/config/portfolio";
 
 const ContactSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-  const email = "raparlashynesh64@gmail.com";
-  const linkedInUrl = "https://www.linkedin.com/in/shyneshraparla/";
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const { contact } = portfolioData;
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(email);
+      await navigator.clipboard.writeText(contact.email);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      window.prompt("Copy this email address:", email);
+      window.prompt("Copy this email address:", contact.email);
     }
   };
 
@@ -28,10 +27,10 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-mono text-primary text-sm mb-2">04. What's Next?</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <p className="font-mono text-primary text-sm mb-2">{contact.sectionTitle}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{contact.title}</h2>
           <p className="text-muted-foreground mb-10 leading-relaxed">
-            I'm always open to new opportunities and interesting conversations. Feel free to reach out!
+            {contact.description}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -44,11 +43,11 @@ const ContactSection = () => {
               {copied ? "Copied!" : "Copy Email"}
             </button>
             <a
-              href={linkedInUrl}
+              href={contact.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-mono text-sm border border-border text-foreground px-8 py-4 rounded hover:border-primary hover:text-primary transition-all duration-300 hover:bg-primary/10"
-              aria-label="Open LinkedIn profile of Shynesh Chowdary"
+              aria-label="Open LinkedIn profile"
             >
               <Linkedin size={16} />
               LinkedIn

@@ -1,10 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Download } from "lucide-react";
+import { portfolioData } from "@/config/portfolio";
 
 const ResumeSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const { resume } = portfolioData;
 
   return (
     <section id="resume" className="section-padding" ref={ref}>
@@ -15,14 +17,14 @@ const ResumeSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold mb-6">
-            <span className="font-mono text-primary text-lg">03.</span>
-            Resume
+            <span className="font-mono text-primary text-lg">04.</span>
+            {resume.title}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Interested in my experience? Download my resume to learn more about my skills and background.
+            {resume.description}
           </p>
           <a
-            href="/resume.pdf"
+            href={resume.fileUrl}
             download
             className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded transition-all duration-300 hover:bg-primary/10"
           >
