@@ -1,38 +1,36 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/SectionHeading";
+import { profile } from "@/data/profile";
 
-const ResumeSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <section id="resume" className="section-padding" ref={ref}>
-      <div className="max-w-3xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold mb-6">
-            <span className="font-mono text-primary text-lg">03.</span>
-            Resume
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Interested in my experience? Download my resume to learn more about my skills and background.
-          </p>
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-8 py-4 rounded transition-all duration-300 hover:bg-primary/10"
-          >
-            <Download size={16} />
-            Download Resume
+const ResumeSection = () => (
+  <section id="resume" className="section-padding scroll-mt-20">
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-4xl mx-auto"
+    >
+      <SectionHeading {...profile.sections.resume} />
+      <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-muted-foreground">{profile.resume.description}</p>
+        <Button variant="outline" asChild className="shrink-0 border-primary text-primary hover:bg-primary/10">
+          <a href={profile.resume.url} download>
+            <Download aria-hidden="true" />
+            {profile.resume.downloadLabel}
           </a>
-        </motion.div>
+        </Button>
       </div>
-    </section>
-  );
-};
+      <iframe
+        src={`${profile.resume.url}#view=FitH`}
+        title={profile.resume.previewTitle}
+        className="w-full h-[620px] md:h-[800px] border border-border rounded-md bg-card"
+        loading="lazy"
+      />
+    </motion.div>
+  </section>
+);
 
 export default ResumeSection;

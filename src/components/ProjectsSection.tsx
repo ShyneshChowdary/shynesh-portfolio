@@ -1,68 +1,54 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import { profile } from "@/data/profile";
 
-const ProjectsSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+const ProjectsSection = () => (
+  <section id="projects" className="section-padding scroll-mt-20">
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.08 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-3xl mx-auto"
+    >
+      <SectionHeading {...profile.sections.projects} />
+      <div className="space-y-6">
+        {profile.projects.map((project) => {
+          const content = (
+            <>
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <p className="font-mono text-primary text-sm">{project.category}</p>
+                {project.url && <ExternalLink aria-hidden="true" size={18} className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />}
+              </div>
+              <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
+              <ul className="flex flex-wrap gap-3 font-mono text-xs text-muted-foreground" aria-label={project.title}>
+                {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+              </ul>
+            </>
+          );
 
-  return (
-    <section id="projects" className="section-padding" ref={ref}>
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold mb-12">
-            <span className="font-mono text-primary text-lg">02.</span>
-            Projects
-            <span className="h-px bg-border flex-1 max-w-[200px]" />
-          </h2>
-
-          <div className="space-y-8">
+          return project.url ? (
             <a
-              href="https://wysera.ai/"
+              key={project.title}
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block bg-card border border-border rounded-lg p-8 hover:border-primary/40 transition-colors duration-300 glow"
+              aria-label={project.linkLabel}
+              className="group relative block bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/40 transition-colors duration-300 glow"
             >
-              <div className="flex items-start justify-between mb-4">
-                <p className="font-mono text-primary text-sm">Current Project</p>
-                <ExternalLink size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Wysera</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                An AI-agentic platform that replaces an entire stack of marketing, sales, and operations tools — HubSpot, Salesforce, Mailchimp, Zapier, and more — with one lower-cost system. A single AI assistant runs CRM, prospecting, email, SEO, automation, and scheduling end-to-end, with the human approving every action.
-              </p>
-              <ul className="flex flex-wrap gap-3 font-mono text-xs text-muted-foreground">
-                <li>AI Agents</li>
-                <li>CRM &amp; Marketing</li>
-                <li>Sales Automation</li>
-                <li>SaaS Platform</li>
-              </ul>
+              {content}
             </a>
-
-            <div className="group relative bg-card border border-border rounded-lg p-8 hover:border-primary/40 transition-colors duration-300 glow">
-              <div className="flex items-start justify-between mb-4">
-                <p className="font-mono text-primary text-sm">Final Year Project</p>
-                <ExternalLink size={18} className="text-muted-foreground" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Animal Detection</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                This project is about detecting animals using cameras. Leveraging computer vision and real-time processing to identify and classify animals in their natural habitats.
-              </p>
-              <ul className="flex flex-wrap gap-3 font-mono text-xs text-muted-foreground">
-                <li>Computer Vision</li>
-                <li>Camera Integration</li>
-                <li>Real-time Detection</li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+          ) : (
+            <article key={project.title} className="group relative bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/40 transition-colors duration-300 glow">
+              {content}
+            </article>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </motion.div>
+  </section>
+);
 
 export default ProjectsSection;
