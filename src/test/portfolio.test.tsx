@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import HeroSection from "../components/HeroSection";
-import { portfolioData } from "../config/portfolio";
+import { profile } from "../data/profile";
 import React from "react";
 
 // Mock framer-motion to avoid animation issues in tests
@@ -18,8 +18,8 @@ vi.mock("framer-motion", () => ({
 }));
 
 describe("Portfolio Data Integration", () => {
-  it("HeroSection renders the name from portfolioData", () => {
+  it("HeroSection renders the name from the editable profile", () => {
     render(<HeroSection />);
-    expect(screen.getByText(new RegExp(portfolioData.hero.name, "i"))).toBeDefined();
+    expect(screen.getByText(new RegExp(profile.name, "i"))).toBeDefined();
   });
 });

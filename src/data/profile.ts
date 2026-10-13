@@ -16,6 +16,7 @@ export const profile = {
   navigation: {
     logoAlt: "Shynesh Raparla",
     menuLabel: "Toggle menu",
+    themeToggleLabel: "Toggle theme",
     links: [
       { label: "About", href: "#about" },
       { label: "Experience", href: "#experience" },
@@ -130,7 +131,6 @@ export const profile = {
   },
   footer: {
     copyrightPrefix: "©",
-    copyrightSuffix: "All rights reserved.",
   },
   seo: {
     title: "Shynesh Raparla — Software Developer | QA Automation & Social Media",

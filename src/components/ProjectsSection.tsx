@@ -19,7 +19,7 @@ const ProjectsSection = () => (
             <>
               <div className="flex items-start justify-between gap-4 mb-4">
                 <p className="font-mono text-primary text-sm">{project.category}</p>
-                {project.url && <ExternalLink aria-hidden="true" size={18} className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />}
+                {"url" in project && <ExternalLink aria-hidden="true" size={18} className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />}
               </div>
               <h3 className="text-xl font-bold mb-3">{project.title}</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
@@ -29,7 +29,7 @@ const ProjectsSection = () => (
             </>
           );
 
-          return project.url ? (
+          return "url" in project ? (
             <a
               key={project.title}
               href={project.url}

@@ -1,3 +1,3 @@
 - [x] Build the portfolio content source and data-driven sections.
-- [ ] Update crawler-visible metadata and verify the resume/contact flows.
-- [ ] Run the focused profile tests and check the preview diagnostics.
+- [x] Update crawler-visible metadata and verify the resume/contact flows.
+- [x] Run the focused profile tests and check the preview diagnostics.
