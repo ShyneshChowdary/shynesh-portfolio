@@ -130,7 +130,6 @@ export const profile = {
   },
   footer: {
     copyrightPrefix: "©",
-    copyrightSuffix: "All rights reserved.",
   },
   seo: {
     title: "Shynesh Raparla — Software Developer | QA Automation & Social Media",

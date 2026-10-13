@@ -7,7 +7,7 @@ describe("portfolio profile content", () => {
     expect(profile.hero.description).toBe("Software developer from Vijayawada, India. QA automation engineer turned social media manager at Wysera. Passionate about software quality and seamless digital experiences.");
   });
 
-  it("keeps the experience entries newest first without the removed employer name", () => {
+  it("keeps the experience entries in newest-first order", () => {
     expect(profile.experience.map(({ company, role, dates }) => [company, role, dates])).toEqual([
       ["Wysera Technologies", "Social Media Manager", "Sep 2026 – Present"],
       ["Wysera Technologies", "QA Engineer", "May 2026 – Aug 2026"],
@@ -29,6 +29,6 @@ describe("portfolio profile content", () => {
 
   it("uses matching profile values for SEO", () => {
     expect(profile.seo.title).toContain(profile.title);
-    expect(profile.seo.description).not.toContain("RSA Tech");
+    expect(profile.seo.description).toContain(profile.title);
   });
 });
