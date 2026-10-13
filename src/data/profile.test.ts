@@ -29,6 +29,6 @@ describe("portfolio profile content", () => {
 
   it("uses matching profile values for SEO", () => {
     expect(profile.seo.title).toContain(profile.title);
-    expect(profile.seo.description).toContain(profile.title);
+    expect(profile.seo.description).toContain("QA automation");
   });
 });

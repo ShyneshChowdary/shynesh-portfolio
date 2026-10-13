@@ -16,6 +16,7 @@ export const profile = {
   navigation: {
     logoAlt: "Shynesh Raparla",
     menuLabel: "Toggle menu",
+    themeToggleLabel: "Toggle theme",
     links: [
       { label: "About", href: "#about" },
       { label: "Experience", href: "#experience" },

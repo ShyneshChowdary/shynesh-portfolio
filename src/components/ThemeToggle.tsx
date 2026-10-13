@@ -1,6 +1,7 @@
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { motion } from "framer-motion";
+import { profile } from "@/data/profile";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
@@ -9,7 +10,7 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors duration-200"
-      aria-label="Toggle theme"
+      aria-label={profile.navigation.themeToggleLabel}
     >
       <motion.div
         key={theme}
