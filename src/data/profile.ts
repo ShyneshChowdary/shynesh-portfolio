@@ -17,6 +17,7 @@ export const profile = {
     logoAlt: "Shynesh Raparla",
     menuLabel: "Toggle menu",
     themeToggleLabel: "Toggle theme",
+    mobileNavCloseDelayMs: 350,
     links: [
       { label: "About", href: "#about" },
       { label: "Experience", href: "#experience" },

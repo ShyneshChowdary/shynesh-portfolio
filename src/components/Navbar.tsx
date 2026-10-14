@@ -11,7 +11,10 @@ const Navbar = () => {
 
   const handleMobileNav = (href: string) => {
     setOpen(false);
-    window.setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" }), 100);
+    window.setTimeout(
+      () => document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      profile.navigation.mobileNavCloseDelayMs,
+    );
   };
 
   return (

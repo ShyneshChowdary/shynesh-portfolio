@@ -1,3 +1,4 @@
 - [x] Build the portfolio content source and data-driven sections.
 - [x] Update crawler-visible metadata and verify the resume/contact flows.
 - [x] Run the focused profile tests and check the preview diagnostics.
+- [x] Clarify the preview was not paused and verify the mobile Contact menu reaches its section.
