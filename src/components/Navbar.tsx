@@ -9,11 +9,6 @@ import ThemeToggle from "./ThemeToggle";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const handleMobileNav = (href: string) => {
-    setOpen(false);
-    window.setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" }), 100);
-  };
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="flex items-center justify-between px-6 py-4 w-full">
@@ -53,10 +48,7 @@ const Navbar = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      handleMobileNav(link.href);
-                    }}
+                    onClick={() => setOpen(false)}
                     className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}

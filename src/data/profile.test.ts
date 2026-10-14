@@ -25,6 +25,7 @@ describe("portfolio profile content", () => {
     expect(profile.contact.github).toBe("https://github.com/ShyneshChowdary");
     expect(profile.contact.linkedin).toBe("https://www.linkedin.com/in/shyneshraparla/");
     expect(profile.resume.url).toBe("/resume.pdf");
+    expect(profile.resume.previewUrl).toBe("/resume-preview.png");
   });
 
   it("uses matching profile values for SEO", () => {

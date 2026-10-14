@@ -23,12 +23,14 @@ const ResumeSection = () => (
           </a>
         </Button>
       </div>
-      <iframe
-        src={`${profile.resume.url}#view=FitH`}
-        title={profile.resume.previewTitle}
-        className="w-full h-[620px] md:h-[800px] border border-border rounded-md bg-card"
-        loading="lazy"
-      />
+      <div className="overflow-hidden border border-border rounded-md bg-card">
+        <img
+          src={profile.resume.previewUrl}
+          alt={profile.resume.previewTitle}
+          className="block w-full h-auto"
+          loading="lazy"
+        />
+      </div>
     </motion.div>
   </section>
 );

@@ -107,6 +107,7 @@ export const profile = {
   certifications: [],
   resume: {
     url: "/resume.pdf",
+    previewUrl: "/resume-preview.png",
     downloadLabel: "Download Resume",
     previewTitle: "Resume preview for Shynesh Raparla",
     description: "Explore my experience, projects, and technical background.",
