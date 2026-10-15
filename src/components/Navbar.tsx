@@ -48,7 +48,13 @@ const Navbar = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setOpen(false);
+                      window.setTimeout(() => {
+                        window.location.hash = link.href;
+                      }, 320);
+                    }}
                     className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
