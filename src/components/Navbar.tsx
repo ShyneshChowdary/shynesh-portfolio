@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,13 @@ import ThemeToggle from "./ThemeToggle";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [pendingHref, setPendingHref] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!open && pendingHref) {
+      document.querySelector(pendingHref)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setPendingHref(null);
+    }
+  }, [open, pendingHref]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -42,12 +49,6 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            onAnimationComplete={() => {
-              if (!open && pendingHref) {
-                document.querySelector(pendingHref)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                setPendingHref(null);
-              }
-            }}
             className="lg:hidden overflow-hidden border-b border-border bg-background"
           >
             <ul className="flex flex-col gap-4 px-6 py-6">
