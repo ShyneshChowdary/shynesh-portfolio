@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,14 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!open && pendingHref) {
+      document.querySelector(pendingHref)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setPendingHref(null);
+    }
+  }, [open, pendingHref]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -48,7 +56,11 @@ const Navbar = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setPendingHref(link.href);
+                      setOpen(false);
+                    }}
                     className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
