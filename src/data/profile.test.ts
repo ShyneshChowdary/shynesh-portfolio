@@ -21,11 +21,14 @@ describe("portfolio profile content", () => {
     expect(profile.projects[1]?.description).toContain("95% precision");
     expect(profile.projects[1]?.description).toContain("93% F1-score");
     expect(profile.education[0]?.dates).toBe("Nov 2021 – Apr 2026");
-    expect(profile.contact.email).toBe("raparlashynesh64@gmail.com");
+    expect(profile.contact.email).toBe("raparlashynesh75@gmail.com");
+    expect(profile.contact.mailto).toBe("mailto:raparlashynesh75@gmail.com");
     expect(profile.contact.github).toBe("https://github.com/ShyneshChowdary");
     expect(profile.contact.linkedin).toBe("https://www.linkedin.com/in/shyneshraparla/");
-    expect(profile.resume.url).toBe("/resume.pdf");
-    expect(profile.resume.previewUrl).toBe("/resume-preview.png");
+    expect(profile.resume.url).toContain("/Shynesh_Resume.pdf");
+    expect(profile.resume.url).not.toBe("/resume.pdf");
+    expect(profile.resume.previewUrl).toContain("/resume-preview.png");
+    expect(profile.resume.previewUrl).not.toBe("/resume-preview.png");
   });
 
   it("uses matching profile values for SEO", () => {
