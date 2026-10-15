@@ -3,3 +3,4 @@
 - [x] Run the focused profile tests and check the preview diagnostics.
 - [x] Clarify the preview was not paused and verify the mobile Contact menu reaches its section.
 - [x] Make mobile anchor scrolling happen after the collapsing menu finishes, then verify it reaches the section.
+- [x] Replace the contact email and resume with the latest uploaded version.
