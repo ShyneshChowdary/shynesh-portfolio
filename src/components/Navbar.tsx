@@ -8,6 +8,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -41,6 +42,12 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
+            onAnimationComplete={() => {
+              if (!open && pendingHref) {
+                document.querySelector(pendingHref)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                setPendingHref(null);
+              }
+            }}
             className="lg:hidden overflow-hidden border-b border-border bg-background"
           >
             <ul className="flex flex-col gap-4 px-6 py-6">
@@ -50,10 +57,8 @@ const Navbar = () => {
                     href={link.href}
                     onClick={(event) => {
                       event.preventDefault();
+                      setPendingHref(link.href);
                       setOpen(false);
-                      window.setTimeout(() => {
-                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                      }, 350);
                     }}
                     className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                   >
