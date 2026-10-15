@@ -52,8 +52,8 @@ const Navbar = () => {
                       event.preventDefault();
                       setOpen(false);
                       window.setTimeout(() => {
-                        window.location.hash = link.href;
-                      }, 320);
+                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }, 350);
                     }}
                     className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
                   >
