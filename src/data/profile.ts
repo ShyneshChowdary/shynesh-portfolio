@@ -61,20 +61,9 @@ export const profile = {
     },
   ],
   skills: [
-    "Python",
-    "TypeScript",
-    "JavaScript",
-    "Java",
-    "C",
-    "HTML/CSS",
+    "QA Automation",
     "Playwright",
-    "pytest",
-    "API testing",
-    "Page Object Model",
-    "MySQL",
-    "MongoDB",
-    "GitHub",
-    "GitHub Actions",
+    "API Testing",
   ],
   projects: [
     {

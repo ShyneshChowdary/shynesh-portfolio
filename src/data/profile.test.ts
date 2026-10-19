@@ -15,8 +15,12 @@ describe("portfolio profile content", () => {
     ]);
   });
 
-  it("contains the requested skills, project performance, education, contact links, and resume path", () => {
-    expect(profile.skills).toEqual(["Python", "TypeScript", "JavaScript", "Java", "C", "HTML/CSS", "Playwright", "pytest", "API testing", "Page Object Model", "MySQL", "MongoDB", "GitHub", "GitHub Actions"]);
+  it("keeps the skills section focused on two or three major skills", () => {
+    expect(profile.skills.length).toBeGreaterThanOrEqual(2);
+    expect(profile.skills.length).toBeLessThanOrEqual(3);
+  });
+
+  it("contains project performance, education, contact links, and resume path", () => {
     expect(profile.projects[1]?.description).toContain("10 animal classes");
     expect(profile.projects[1]?.description).toContain("95% precision");
     expect(profile.projects[1]?.description).toContain("93% F1-score");
