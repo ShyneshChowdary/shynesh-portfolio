@@ -1,6 +1,6 @@
 // Edit only this file to update the site.
-import resumePdf from "@/assets/resume.pdf.asset.json";
-import resumePreview from "@/assets/resume-preview.png.asset.json";
+import resumePdf from "../assets/resume.pdf.asset.json";
+import resumePreview from "../assets/resume-preview.png.asset.json";
 
 const email = "raparlashynesh75@gmail.com";
 
