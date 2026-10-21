@@ -29,10 +29,8 @@ describe("portfolio profile content", () => {
     expect(profile.contact.mailto).toBe("mailto:raparlashynesh75@gmail.com");
     expect(profile.contact.github).toBe("https://github.com/ShyneshChowdary");
     expect(profile.contact.linkedin).toBe("https://www.linkedin.com/in/shyneshraparla/");
-    expect(profile.resume.url).toContain("/Shynesh_Resume.pdf");
-    expect(profile.resume.url).not.toBe("/resume.pdf");
-    expect(profile.resume.previewUrl).toContain("/resume-preview.png");
-    expect(profile.resume.previewUrl).not.toBe("/resume-preview.png");
+    expect(profile.resume.url).toBe("/Shynesh_Resume.pdf");
+    expect(profile.resume.previewUrl).toBe("/resume-preview.png");
   });
 
   it("uses matching profile values for SEO", () => {
