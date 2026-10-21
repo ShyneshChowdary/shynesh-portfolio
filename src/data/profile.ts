@@ -37,17 +37,17 @@ export const profile = {
     contact: { number: "07.", eyebrow: "What's Next?", title: "Get In Touch" },
   },
   about: [
-    "I work at Wysera Technologies, where I started in QA and Playwright test automation using Python and TypeScript.",
+    "I work at Wysera, where I started in QA and Playwright test automation using Python and TypeScript.",
     "Since September 2026, I’ve managed social content and content calendars, combining a technical foundation with clear, consistent communication.",
   ],
   experience: [
     {
-      company: "Wysera Technologies",
+      company: "Wysera",
       role: "Social Media Manager",
       dates: "Sep 2026 – Present",
     },
     {
-      company: "Wysera Technologies",
+      company: "Wysera",
       role: "QA Engineer",
       dates: "May 2026 – Aug 2026",
     },
@@ -96,9 +96,7 @@ export const profile = {
   certifications: [],
   resume: {
     url: "/Shynesh_Resume.pdf",
-    previewUrl: "/resume-preview.png",
     downloadLabel: "Download Resume",
-    previewTitle: "Resume preview for Shynesh Raparla",
     description: "Explore my experience, projects, and technical background.",
   },
   contact: {
