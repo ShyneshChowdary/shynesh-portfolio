@@ -1,7 +1,4 @@
 // Edit only this file to update the site.
-import resumePdf from "../assets/resume.pdf.asset.json";
-import resumePreview from "../assets/resume-preview.png.asset.json";
-
 const email = "raparlashynesh75@gmail.com";
 
 export const profile = {
@@ -98,8 +95,8 @@ export const profile = {
   ],
   certifications: [],
   resume: {
-    url: resumePdf.url,
-    previewUrl: resumePreview.url,
+    url: "/Shynesh_Resume.pdf",
+    previewUrl: "/resume-preview.png",
     downloadLabel: "Download Resume",
     previewTitle: "Resume preview for Shynesh Raparla",
     description: "Explore my experience, projects, and technical background.",
