@@ -9,8 +9,8 @@ describe("portfolio profile content", () => {
 
   it("keeps the experience entries in newest-first order", () => {
     expect(profile.experience.map(({ company, role, dates }) => [company, role, dates])).toEqual([
-      ["Wysera Technologies", "Social Media Manager", "Sep 2026 – Present"],
-      ["Wysera Technologies", "QA Engineer", "May 2026 – Aug 2026"],
+      ["Wysera", "Social Media Manager", "Sep 2026 – Present"],
+      ["Wysera", "QA Engineer", "May 2026 – Aug 2026"],
       ["Connexr Solutions Pvt. Ltd.", "Quality Assurance Analyst", "Jan 2026 – Apr 2026"],
     ]);
   });
@@ -30,7 +30,6 @@ describe("portfolio profile content", () => {
     expect(profile.contact.github).toBe("https://github.com/ShyneshChowdary");
     expect(profile.contact.linkedin).toBe("https://www.linkedin.com/in/shyneshraparla/");
     expect(profile.resume.url).toBe("/Shynesh_Resume.pdf");
-    expect(profile.resume.previewUrl).toBe("/resume-preview.png");
   });
 
   it("uses matching profile values for SEO", () => {

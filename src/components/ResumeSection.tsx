@@ -14,22 +14,14 @@ const ResumeSection = () => (
       className="max-w-4xl mx-auto"
     >
       <SectionHeading {...profile.sections.resume} />
-      <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col items-center gap-4">
         <p className="text-muted-foreground">{profile.resume.description}</p>
-        <Button variant="outline" asChild className="shrink-0 border-primary text-primary hover:bg-primary/10">
+        <Button variant="outline" asChild className="border-primary text-primary hover:bg-primary/10">
           <a href={profile.resume.url} download>
             <Download aria-hidden="true" />
             {profile.resume.downloadLabel}
           </a>
         </Button>
-      </div>
-      <div className="overflow-hidden border border-border rounded-md bg-card">
-        <img
-          src={profile.resume.previewUrl}
-          alt={profile.resume.previewTitle}
-          className="block w-full h-auto"
-          loading="lazy"
-        />
       </div>
     </motion.div>
   </section>
